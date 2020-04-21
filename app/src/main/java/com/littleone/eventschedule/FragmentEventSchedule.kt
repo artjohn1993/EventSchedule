@@ -54,7 +54,7 @@ class FragmentEventSchedule(var activity: Activity): Fragment() {
 
     fun setRecycler() {
         recyclerView?.layoutManager = LinearLayoutManager(activity, LinearLayout.VERTICAL, false)
-        recyclerView?.adapter = EventAdapter()
+        recyclerView?.adapter = EventAdapter(activity)
     }
 
 

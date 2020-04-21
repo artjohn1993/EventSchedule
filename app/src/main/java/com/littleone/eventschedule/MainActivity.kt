@@ -1,5 +1,7 @@
 package com.littleone.eventschedule
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
@@ -28,7 +30,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        setView()
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         changeFragment(FragmentEventSchedule(this   ))
     }
@@ -38,5 +40,12 @@ class MainActivity : AppCompatActivity() {
         fragment.setCustomAnimations(R.anim.abc_slide_in_bottom, android.R.animator.fade_out)
         fragment.replace(R.id.frameLayout, data).commit()
     }
+
+    private fun setView() {
+        supportActionBar?.setBackgroundDrawable(ColorDrawable(this.resources.getColor(R.color.colorPrimaryDark)))
+        supportActionBar?.elevation = 0f
+        title = "Events Schedule"
+    }
+
 }
 
